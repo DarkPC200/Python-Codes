@@ -1,0 +1,8 @@
+Word = input(" Type a word : ")
+X = Word
+
+if 'a' in X:
+  print(" Letter 'a' detected ")
+if 'b' in X:
+  print(" Letter 'b' detected ")
+ 
