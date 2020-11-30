@@ -1,0 +1,27 @@
+from time import sleep
+username = input('username : ')
+password = input('password : ') 
+moneybank = 1_000_000
+
+print(f'-----------------------------------')
+print(f'welcome {username}, please wait....')
+print(f'-----------------------------------')
+sleep(10)
+
+print(f'welcome {username}, how can I help you today?')
+print(f' 1 - Check an account \n 2 - spending money ')
+Request = input(" > ")
+while True:
+
+    if Request == "1":
+        print(f'{username} accout info : ')
+        print(f'Money : 1,000,000 $')
+    elif Request == "2":
+        SPN = int(input(f'you have {moneybank:,}, how you want to spend? '))
+        REST = 1000000 - SPN
+        moneybank = moneybank - SPN
+        print(f'{REST:,} left, thanks for using us\n')
+        
+    Quit = input(f'Wanna Quit? Yes/No ')
+    if Quit == "Yes":
+        break
