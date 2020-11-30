@@ -1,0 +1,42 @@
+Code = [['_','_','_','1'],
+	    ['_','0','1','0'],
+	    ['_','1','0','1'],
+	    ['0','1','0','1']]
+	    
+""" printing the code """	    
+for i in range(len(Code)):
+	print(' '.join(Code[i]))
+	
+def Correcting(l):
+	""" check 2nd & 4th column     """
+	""" saving the head position (Code[0][1] in my case)"""
+	pos = [None,None]		
+	Final_value = 0
+	for i in range(len(l)):
+		for j in range(len(l[i])):
+			if j == 0 or j == 2:
+				pass
+			elif l[i][j] == '_':
+				pos[0] = i
+				pos[1] = j
+			else:
+				V = int(l[i][j])
+				Final_value += V
+	
+	X , Y = pos[1] , pos[0]	
+	""" check if the result is even or odd """		 
+	if Final_value % 2 == 0:
+		l[X,Y] = '0'
+	else:
+		l[X,Y] = '1'		
+
+""" applying to code array"""	
+Correcting(Code)
+
+print(pos)
+
+print('after')		
+	
+""" print out the result after correcting """
+for i in range(len(Code)):
+	print(' '.join(Code[i]))
